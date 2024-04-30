@@ -49,7 +49,8 @@ Deno.test("deno_scenario", async () => {
 });
 
 Deno.test("scenario node", async () => {
-    const cmd = new Deno.Command("npx", {
+    const exe = Deno.build.os === "windows" ? "npx.cmd" : "npx";
+    const cmd = new Deno.Command(exe, {
         args: ["tsx", "./scenarios/load_platform.ts"],
         stdout: "piped",
         stderr: "piped",
