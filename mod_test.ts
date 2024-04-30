@@ -1,9 +1,8 @@
-import { assertEquals as equals, assert as ok, assertFalse as no } from "jsr:@std/assert@^0.224.0";
-import { PLATFORM, ARCH, IS_64BIT, WINDOWS, LINUX, DARWIN } from "./mod.ts";
+import { assert as ok, assertEquals as equals, assertFalse as no } from "jsr:@std/assert@^0.224.0";
+import { ARCH, DARWIN, IS_64BIT, LINUX, PLATFORM, WINDOWS } from "./mod.ts";
 
 Deno.test("platform", () => {
-
-    switch(PLATFORM) {
+    switch (PLATFORM) {
         case "darwin":
             {
                 ok(DARWIN);
@@ -31,17 +30,14 @@ Deno.test("platform", () => {
                 ok(IS_64BIT);
             }
             break;
-        }
+    }
 });
 
-
-
-
 Deno.test("deno_scenario", async () => {
-    const cmd = new Deno.Command('deno', {
-        args: ['run', '-A', './scenarios/load_platform.ts'],
-        stdout: 'piped',
-        stderr: 'piped',
+    const cmd = new Deno.Command("deno", {
+        args: ["run", "-A", "./scenarios/load_platform.ts"],
+        stdout: "piped",
+        stderr: "piped",
     });
 
     const output = await cmd.output();
@@ -53,10 +49,10 @@ Deno.test("deno_scenario", async () => {
 });
 
 Deno.test("scenario node", async () => {
-    const cmd = new Deno.Command('npx', {
-        args: ['tsx', './scenarios/load_platform.ts'],
-        stdout: 'piped',
-        stderr: 'piped',
+    const cmd = new Deno.Command("npx", {
+        args: ["tsx", "./scenarios/load_platform.ts"],
+        stdout: "piped",
+        stderr: "piped",
     });
 
     const output = await cmd.output();
@@ -65,13 +61,13 @@ Deno.test("scenario node", async () => {
     console.log(decoder.decode(output.stderr));
 
     equals(text, `${PLATFORM}_${ARCH}\n`);
-})
+});
 
 Deno.test("scenario bun", async () => {
-    const cmd = new Deno.Command('bun', {
-        args: ['./scenarios/load_platform.ts'],
-        stdout: 'piped',
-        stderr: 'piped',
+    const cmd = new Deno.Command("bun", {
+        args: ["./scenarios/load_platform.ts"],
+        stdout: "piped",
+        stderr: "piped",
     });
 
     const output = await cmd.output();
