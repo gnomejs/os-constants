@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "allowImportingTsExtensions": true
+    },
+    "ts-node": {
+        "esm": true,
+        "experimentalSpecifierResolution": "explicit",
+        "emit": false,
+        "experimentalResolver": true,
+        "compilerOptions": {
+            "moduleResolution": "NodeNext",
+            "module": "ES2022",
+            "esModuleInterop": false,
+            "allowArbitraryExtensions": true,
+            "allowImportingTsExtensions": true
+        }
+    }
+}
