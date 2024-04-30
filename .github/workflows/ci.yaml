@@ -67,7 +67,7 @@ jobs:
 
       - name: Publish Dry Run
         if: matrix.os == 'ubuntu-latest'
-        run: deno publish --dry-run
+        run: deno publish --dry-run --allow-dirty
 
   publish:
     runs-on: ubuntu-latest
