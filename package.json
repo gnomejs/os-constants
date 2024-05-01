@@ -1,24 +1,24 @@
 {
-    "name": "@gnome/os-constants",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "type": "module",
-    "exports": {
-        "./mod": {
-            "import": "./mod.js"
-        }
-    },
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-        "@gnome/runtime-constants": "npm:@jsr/gnome__runtime-constants",
-        "tsx": "^4.7.3"
-    },
-    "devDependencies": {
-        "jsr": "^0.12.3"
+  "name": "@gnome/os-constants",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "exports": {
+    "./mod": {
+      "import": "./mod.js"
     }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@gnome/runtime-constants": "npm:@jsr/gnome__runtime-constants",
+    "tsx": "^4.8.2"
+  },
+  "devDependencies": {
+    "jsr": "^0.12.3"
+  }
 }

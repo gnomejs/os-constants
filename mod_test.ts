@@ -49,8 +49,8 @@ Deno.test("deno_scenario", async () => {
 });
 
 Deno.test("scenario node", async () => {
-    const exe = Deno.build.os === "windows" ? "npx.cmd" : "npx";
-    const cmd = new Deno.Command(exe, {
+    // tsx runs with node even though we're using bun to invoke
+    const cmd = new Deno.Command("bun", {
         args: ["tsx", "./scenarios/load_platform.ts"],
         stdout: "piped",
         stderr: "piped",
