@@ -15,7 +15,7 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "@gnome/runtime-info": "npm:@jsr/gnome__runtime-info@^0.0.0",
+        "@gnome/runtime-constants": "npm:@jsr/gnome__runtime-constants",
         "tsx": "^4.7.3"
     },
     "devDependencies": {

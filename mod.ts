@@ -1,12 +1,12 @@
 /**
  * os-constants provides constant values for basic os information
  * such as `PLATFORM`, `ARCH`, `WINDOWS`, `DARWIN`, `PATH_SEP`, `DEV_NULL`
- * 
+ *
  * ## Basic Usage
- * 
+ *
  * ```typescript
  * import * as os from "@gnome/os-constants";
- * 
+ *
  * console.log(os.PLATFORM);
  * console.log(os.ARCH);
  * console.log("windows", os.WINDOWS);
@@ -18,7 +18,7 @@
  * @module
  */
 
-import { RUNTIME } from "@gnome/runtime-info";
+import { RUNTIME } from "@gnome/runtime-constants";
 
 export type OsPlatform =
     | "unix"
@@ -188,7 +188,7 @@ export const EOL = WINDOWS ? "\r\n" : "\n";
 /**
  * True if the operating system is 64-bit, false otherwise.
  */
-export const IS_64BIT : boolean = ["amd64", "arm64", "ppc64", "s390x"].includes(ARCH);
+export const IS_64BIT: boolean = ["amd64", "arm64", "ppc64", "s390x"].includes(ARCH);
 
 /**
  * The path to the null device for the current platform.

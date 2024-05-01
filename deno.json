@@ -26,5 +26,8 @@
             "deno.json"
         ]
     },
-    "imports": { "@gnome/runtime-info": "jsr:@gnome/runtime-info@^0.0.0" }
+    "imports": {
+        "@gnome/runtime-constants": "jsr:@gnome/runtime-constants@^0.0.0",
+        "@gnome/runtime-info": "jsr:@gnome/runtime-info@^0.0.0"
+    }
 }
