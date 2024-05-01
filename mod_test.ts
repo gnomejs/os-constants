@@ -50,7 +50,23 @@ Deno.test("deno_scenario", async () => {
 
 Deno.test("scenario node", async () => {
     // tsx runs with node even though we're using bun to invoke
-    const cmd = new Deno.Command("bun", {
+
+    const HOME = Deno.env.get("USERPROFILE") || Deno.env.get("HOME") || Deno.env.get("HOMEPATH") ||
+        Deno.env.get("HOMEDRIVE");
+    let exe = "bun";
+    if (HOME) {
+        try {
+            using file = await Deno.open(`${HOME}/.bun/bin/bun`, { read: true });
+            const fileInfo = await file.stat();
+            if (fileInfo.isFile) {
+                exe = `${HOME}/.bun/bin/bun`;
+            }
+        } catch (e) {
+            console.warn(e);
+        }
+    }
+
+    const cmd = new Deno.Command(exe, {
         args: ["tsx", "./scenarios/load_platform.ts"],
         stdout: "piped",
         stderr: "piped",
